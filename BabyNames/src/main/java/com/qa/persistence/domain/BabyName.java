@@ -18,7 +18,7 @@ public class BabyName {
 
 	}
 
-	public BabyName(String name, int lenght) {
+	public BabyName(String name, int length) {
 		this.name = name;
 		this.length = length;
 	}

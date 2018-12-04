@@ -3,6 +3,7 @@ package com.qa.rest;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.qa.service.IBabyNameService;
 
 @RestController
 @RequestMapping("${endpoint.base}")
+@CrossOrigin
 public class BabyNameEndpoint implements IBabyNameEndpoint {
 
 	@Autowired
