@@ -1,0 +1,40 @@
+version: '3'
+services:
+  activemq:
+    container_name: activemq
+    image: bobcrutchley/activemq
+  mongodb:
+    container_name: mongodb
+    image: mongo
+  BabyNameListener:
+    container_name: BabyNameListener
+    build:
+      context: BabyNameListener
+      args:
+      - artifact_id=BabyNameListener
+      - version=0.0.1-SNAPSHOT
+  BabyNames:
+    container_name: BabyNames
+    build:
+      context: BabyNames
+      args:
+      - artifact_id=BabyNames
+      - version=0.0.1-SNAPSHOT
+    ports:
+      - "8080:8080"
+  NameGen:
+    container_name: NameGen
+    build:
+      context: NameGen
+      args:
+      - artifact_id=NameGen
+      - version=0.0.1-SNAPSHOT
+  babynamefrontend:
+    container_name: babynamefrontend
+    build:
+      context: babynamefrontend
+      args:
+      - artifact_id=BabyNameFrontEnd
+      - version=0.1.0
+    ports:
+      - "80:3000"
