@@ -6,7 +6,7 @@ services:
   mongodb:
     container_name: mongodb
     image: mongo
-  babynamelistener:
+  babynameconsumer:
     container_name: BabyNameListener
     build:
       context: BabyNameListener
